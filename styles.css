@@ -193,3 +193,13 @@ textarea{min-height:90px;resize:vertical}
 @media (max-height:700px){
   .mPanel{margin:2vh auto; max-height:96vh}
 }
+
+
+/* Mobile fixes (checkout/header) */
+@media (max-width:520px){
+  .headerInner{flex-wrap:wrap;align-items:flex-start}
+  .headerRight{width:100%;display:flex;justify-content:flex-end}
+  .iconBtn{padding:8px 10px;font-size:13px}
+  .brandText b{font-size:13px}
+  .brandText span{font-size:11px}
+}
