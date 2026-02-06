@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Pizzaria Sabor do Tempero</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="home">
+<header class="header">
+  <div class="container headerInner">
+    <div class="brand">
+      <div class="logo"><img src="assets/logo.png" alt="Pizzaria Sabor do Tempero"/></div>
+      <div class="brandText">
+        <b>Pizzaria Sabor do Tempero</b>
+        <span>Rua Treze de Abril, 381 - Vila Industrial - Toledo/PR</span>
+      </div>
+    </div>
+    <div class="headerRight">
+      <button class="iconBtn" id="goCheckout" type="button">
+        Carrinho <span class="badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="heroCard">
+      <h1 class="hTitle">Peça online com rapidez.</h1>
+      <p class="hSub">Pizzas grandes (12 pedaços), borda recheada e bebidas.</p>
+      <div id="meta"></div>
+    </div>
+  </section>
+
+  <div class="grid">
+    <div>
+      <section class="section">
+        <div class="sectionHd">
+          <h2>Cardápio</h2>
+          <span>*2 sabores: total calculado pela média</span>
+        </div>
+        <div class="sectionBd">
+          <div class="cards" id="sizes"></div>
+        </div>
+      </section>
+
+      <section class="section" style="margin-top:18px">
+        <div class="sectionHd"><h2>Sabores salgadas</h2><span></span></div>
+        <div class="sectionBd" id="flavorsSalgadas"></div>
+      </section>
+
+      <section class="section" style="margin-top:18px">
+        <div class="sectionHd"><h2>Sabores doces</h2><span></span></div>
+        <div class="sectionBd" id="flavorsDoces"></div>
+      </section>
+
+      <section class="section" style="margin-top:18px">
+        <div class="sectionHd"><h2>Bebidas</h2><span></span></div>
+        <div class="sectionBd" id="drinks"></div>
+      </section>
+    </div>
+
+    <aside class="section cart" id="cart">
+      <div class="sectionHd"><h2>Seu carrinho</h2><span></span></div>
+      <div class="cartBd" id="cartItems"></div>
+      <div class="cartFooter">
+        <div><b>Total</b><div id="cartTotal">R$ 0,00</div></div>
+        <button class="btn" id="goCheckout" type="button">Checkout</button>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footerInner">
+    <div>© 2026 Pizzaria Sabor do Tempero</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a href="pedidos.html">Meus pedidos</a>
+      <a href="https://wa.me/554598621838" target="_blank" rel="noreferrer">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="mBackdrop" id="mBackdrop"></div>
+  <div class="mPanel" role="dialog" aria-modal="true" aria-label="Montar pizza">
+    <div class="mHd">
+      <div>
+        <h3 id="mTitle">Pizza</h3>
+        <p id="mHint"></p>
+      </div>
+      <button class="mClose" id="mClose" type="button">Fechar</button>
+    </div>
+    <div class="mBody">
+      <div class="mTabs">
+        <button class="tab active" id="tabS" type="button">Salgadas</button>
+        <button class="tab" id="tabD" type="button">Doces</button>
+      </div>
+
+      <div class="pill">Selecionados: <b id="mSel">0</b></div>
+      <div id="mFlavors"></div>
+
+      <div class="mGrid">
+        <div class="field">
+          <label class="small">Borda</label>
+          <select id="mCrust"></select>
+        </div>
+        <div class="field">
+          <label class="small">Quantidade</label>
+          <input id="mQty" type="number" min="1" value="1" />
+        </div>
+      </div>
+    </div>
+
+    <div class="mFooter">
+      <div class="mTotal">
+        <div class="pill">Unitário: <b id="mUnit">R$ 0,00</b></div>
+        <div class="pill">Total: <b id="mTotal">R$ 0,00</b></div>
+      </div>
+      <button class="btn" id="mAdd" type="button">Adicionar ao carrinho</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

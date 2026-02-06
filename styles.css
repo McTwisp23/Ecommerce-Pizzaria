@@ -1,0 +1,195 @@
+/* Pizzaria Sabor do Tempero - tema Itália (verde/branco/vermelho) */
+:root{
+  --bg:#ffffff;
+  --text:#0b1220;
+  --muted:#5b6475;
+  --green:#0f8a3a;
+  --red:#c1121f;
+  --line:#e8eaf0;
+  --card:#ffffff;
+  --shadow: 0 10px 30px rgba(10,20,30,.08);
+  --radius:18px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg)}
+a{color:inherit;text-decoration:none}
+.container{max-width:1050px;margin:0 auto;padding:0 16px}
+
+.header{
+  position:sticky;top:0;z-index:50;
+  background:linear-gradient(90deg,var(--green),#16a34a);
+  color:#fff;border-bottom:1px solid rgba(255,255,255,.15);
+}
+.headerInner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:14px}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{
+  width:42px;height:42px;border-radius:14px;
+  background:#fff;display:grid;place-items:center;color:var(--green);
+  font-weight:900;letter-spacing:.5px;
+}
+.logo img{width:100%;height:100%;object-fit:contain;border-radius:14px;display:block}
+
+.brandText{line-height:1.1}
+.brandText b{display:block;font-size:14px}
+.brandText span{display:block;font-size:12px;opacity:.9}
+.headerRight{display:flex;align-items:center;gap:10px}
+.badge{
+  display:none;
+  min-width:22px;height:22px;border-radius:999px;
+  background:var(--red);color:#fff;font-weight:800;font-size:12px;
+  align-items:center;justify-content:center;padding:0 7px
+}
+.iconBtn{
+  border:1px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.12);
+  color:#fff;border-radius:14px;padding:9px 12px;
+  display:flex;align-items:center;gap:8px;cursor:pointer
+}
+.iconBtn:hover{background:rgba(255,255,255,.18)}
+
+.hero{padding:26px 0 10px}
+.heroCard{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--card);
+  box-shadow:var(--shadow);padding:18px
+}
+.hTitle{font-size:26px;margin:0 0 6px}
+.hSub{margin:0;color:var(--muted)}
+.metaRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.metaItem{
+  border:1px solid var(--line);border-radius:16px;padding:10px 12px;min-width:130px
+}
+.metaItem b{display:block;font-size:12px}
+.metaItem div{font-weight:800;margin-top:3px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:999px;background:#111827;margin-right:8px;vertical-align:middle}
+.dot.green{background:var(--green)}
+.dot.red{background:var(--red)}
+
+.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin:18px 0 30px}
+@media (max-width: 920px){.grid{grid-template-columns:1fr}}
+
+.section{border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:var(--shadow)}
+.sectionHd{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;align-items:end;justify-content:space-between;gap:10px}
+.sectionHd h2{margin:0;font-size:16px}
+.sectionHd span{color:var(--muted);font-size:12px}
+.sectionBd{padding:12px 16px}
+
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:560px){.cards{grid-template-columns:1fr}}
+
+.card{
+  border:1px solid var(--line);border-radius:16px;background:#fff;
+  padding:12px;text-align:left;box-shadow:0 8px 20px rgba(10,20,30,.06)
+}
+.cardBtn{cursor:pointer}
+.cardBtn:hover{border-color:rgba(15,138,58,.35)}
+.cardTitle{font-weight:900}
+.cardSub{color:var(--muted);font-size:12px;margin-top:4px}
+.cardPrice{margin-top:10px;font-weight:900;color:var(--red)}
+
+.item{display:flex;gap:12px;justify-content:space-between;align-items:flex-start;border-top:1px dashed var(--line);padding:10px 0}
+.item:first-child{border-top:0}
+.itemMain{min-width:0}
+.itemName{font-weight:800}
+.itemDesc{color:var(--muted);font-size:12px;margin-top:3px}
+.itemRight{display:flex;align-items:center;gap:10px}
+.itemPrice{font-weight:900;white-space:nowrap}
+
+.btn{
+  background:var(--green);color:#fff;border:0;border-radius:14px;
+  padding:11px 14px;font-weight:900;cursor:pointer
+}
+.btn:hover{filter:brightness(1.03)}
+.btnAlt{background:#fff;color:var(--green);border:1px solid rgba(15,138,58,.35)}
+.btnSm{padding:7px 10px;border-radius:12px;font-size:12px}
+.link{background:transparent;border:0;color:var(--muted);cursor:pointer;font-size:12px;padding:0}
+.link:hover{color:var(--red)}
+
+.cart{position:sticky;top:86px}
+.cartBd{padding:12px 16px}
+.cartItem{display:flex;gap:12px;justify-content:space-between;align-items:flex-start;border-top:1px dashed var(--line);padding:10px 0}
+.cartItem:first-child{border-top:0}
+.cartMain{min-width:0}
+.cartTitle{font-weight:900}
+.cartSub{color:var(--muted);font-size:12px;margin-top:3px}
+.cartRight{text-align:right}
+.cartPrice{font-weight:900;white-space:nowrap}
+.cartFooter{border-top:1px solid var(--line);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.empty{color:var(--muted);font-size:13px;padding:8px 0}
+
+.footer{
+  background:linear-gradient(90deg,var(--green),#16a34a);
+  color:#fff;padding:18px 0
+}
+.footerInner{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.footer a{border:1px solid rgba(255,255,255,.25);padding:8px 10px;border-radius:14px;background:rgba(255,255,255,.12)}
+.footer a:hover{background:rgba(255,255,255,.18)}
+
+/* Modal */
+.modal{position:fixed;inset:0;display:none;z-index:100}
+.modal.open{display:block}
+.mBackdrop{position:absolute;inset:0;background:rgba(0,0,0,.35)}
+.mPanel{
+  position:relative;
+  width:min(860px, calc(100% - 22px));
+  margin:5vh auto;
+  background:#fff;border-radius:22px;box-shadow:var(--shadow);
+  overflow:hidden;border:1px solid var(--line);
+  max-height:90vh;
+  display:flex;
+  flex-direction:column;
+}
+
+.mHd{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.mHd h3{margin:0;font-size:16px}
+.mHd p{margin:4px 0 0;color:var(--muted);font-size:12px}
+.mClose{border:0;background:#fff;border-radius:12px;padding:8px 10px;cursor:pointer}
+.mBody{padding:12px 16px; flex:1; overflow:auto;}
+.mTabs{display:flex;gap:8px;margin-bottom:10px}
+.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 12px;cursor:pointer;font-weight:900;font-size:12px}
+.tab.active{border-color:rgba(15,138,58,.35);color:var(--green)}
+.pick{
+  /* layout estável: checkbox | texto (cresce) | preço */
+  display:grid;
+  grid-template-columns: 22px 1fr auto;
+  align-items:center;
+  column-gap:12px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:10px 12px;
+  margin:8px 0;
+}
+.pick input{margin:0}
+.pickText{display:flex;flex-direction:column;gap:2px;min-width:0}
+.pickName{font-weight:900}
+.pickDesc{color:var(--muted);font-size:12px}
+.pickPrice{font-weight:900;white-space:nowrap}
+
+.mGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+@media (max-width:720px){.mGrid{grid-template-columns:1fr}}
+.field{display:flex;flex-direction:column;gap:6px}
+label.small{font-size:12px;color:var(--muted);font-weight:800}
+select,input,textarea{
+  border:1px solid var(--line);border-radius:14px;padding:10px 12px;font-size:14px;outline:none
+}
+textarea{min-height:90px;resize:vertical}
+.mFooter{
+  border-top:1px solid var(--line);padding:12px 16px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap
+}
+.mTotal{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.pill{border:1px solid var(--line);border-radius:999px;padding:7px 10px;font-weight:900;font-size:12px}
+.pill b{color:var(--red)}
+
+/* Orders */
+.order{border:1px solid var(--line);border-radius:18px;padding:12px 14px;margin:10px 0;box-shadow:0 8px 18px rgba(10,20,30,.05)}
+.orderTop{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.orderId{font-weight:1000}
+.orderMeta{color:var(--muted);font-size:12px;margin-top:3px}
+.orderTotal{font-weight:1000;color:var(--red)}
+.orderItems{margin-top:10px;color:var(--text)}
+.orderItem{font-size:13px;margin:3px 0}
+.orderStatus{margin-top:10px;color:var(--muted);font-size:13px}
+
+@media (max-height:700px){
+  .mPanel{margin:2vh auto; max-height:96vh}
+}

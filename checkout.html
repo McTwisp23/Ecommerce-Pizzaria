@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Checkout • Pizzaria Sabor do Tempero</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="checkout">
+<header class="header">
+  <div class="container headerInner">
+    <a class="brand" href="index.html">
+      <div class="logo"><img src="assets/logo.png" alt="Pizzaria Sabor do Tempero"/></div>
+      <div class="brandText">
+        <b>Pizzaria Sabor do Tempero</b>
+        <span>Checkout</span>
+      </div>
+    </a>
+    <div class="headerRight">
+      <a class="iconBtn" href="pedidos.html">Meus pedidos</a>
+    </div>
+  </div>
+</header>
+
+<main class="container" style="padding:22px 0 30px">
+  <div class="grid" style="grid-template-columns:1.1fr .9fr">
+    <section class="section">
+      <div class="sectionHd"><h2>Entrega / Retirada</h2><span></span></div>
+      <div class="sectionBd">
+        <div class="mGrid">
+          <div class="field">
+            <label class="small">Modo</label>
+            <select id="modo">
+              <option value="entrega">Entrega (20–30 min)</option>
+              <option value="retirada">Retirada (15 min)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="small">Pagamento</label>
+            <select id="pagamento">
+              <option value="pix">PIX</option>
+              <option value="card">Cartão (na entrega)</option>
+              <option value="cash">Dinheiro</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-top:12px" class="mGrid">
+          <div class="field">
+            <label class="small">Nome</label>
+            <input id="nome" placeholder="Seu nome" />
+          </div>
+          <div class="field">
+            <label class="small">Telefone</label>
+            <input id="tel" placeholder="(45) 9xxxx-xxxx" />
+          </div>
+        </div>
+
+        <div class="field" style="margin-top:12px">
+          <label class="small">Endereço (entrega)</label>
+          <input id="end" placeholder="Rua, número, bairro" />
+        </div>
+
+        <div class="field" style="margin-top:12px">
+          <label class="small">Referência (opcional)</label>
+          <input id="ref" placeholder="Ex.: perto do mercado" />
+        </div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+          <button class="btn btnAlt" id="saveProfile" type="button">Salvar meus dados</button>
+          <a class="btn btnAlt" href="index.html">Voltar ao cardápio</a>
+        </div>
+
+        <div id="pixBox" style="margin-top:18px">
+          <div class="section" style="box-shadow:none">
+            <div class="sectionHd"><h2>PIX</h2><span></span></div>
+            <div class="sectionBd">
+              <p style="margin:0 0 10px;color:var(--muted);font-size:13px">Gere um código e pague no seu banco.</p>
+              <div class="field">
+                <label class="small">Copia e cola</label>
+                <input id="pixCode" readonly value="" />
+              </div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+                <button class="btn btnSm" id="gerarPix" type="button">Gerar PIX</button>
+                <span id="pixHint" style="color:var(--muted);font-size:12px"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="cardBox" style="display:none;margin-top:18px">
+          <div class="section" style="box-shadow:none">
+            <div class="sectionHd"><h2>Cartão</h2><span></span></div>
+            <div class="sectionBd">
+              <p style="margin:0;color:var(--muted);font-size:13px">Pagamento no ato da entrega/retirada.</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="cashBox" style="display:none;margin-top:18px">
+          <div class="section" style="box-shadow:none">
+            <div class="sectionHd"><h2>Dinheiro</h2><span></span></div>
+            <div class="sectionBd">
+              <p style="margin:0;color:var(--muted);font-size:13px">Se precisar de troco, informe na observação.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="field" style="margin-top:18px">
+          <label class="small">Observação (opcional)</label>
+          <textarea id="obs" placeholder="Ex.: sem cebola / ponto da pizza / troco para..."></textarea>
+        </div>
+
+        <div style="display:flex;justify-content:flex-end;margin-top:14px">
+          <button class="btn" id="finalizar" type="button">Finalizar pedido</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="section cart" style="top:86px">
+      <div class="sectionHd"><h2>Resumo</h2><span></span></div>
+      <div class="cartBd" id="cartItems"></div>
+      <div class="cartFooter">
+        <div><b>Total</b><div id="cartTotal">R$ 0,00</div></div>
+        <a class="btn btnAlt" href="index.html">Editar</a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footerInner">
+    <div>Rua Treze de Abril, 381 - Vila Industrial - Toledo/PR</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a href="pedidos.html">Meus pedidos</a>
+      <a href="https://wa.me/554598621838" target="_blank" rel="noreferrer">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

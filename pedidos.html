@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Meus pedidos • Pizzaria Sabor do Tempero</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="pedidos">
+<header class="header">
+  <div class="container headerInner">
+    <a class="brand" href="index.html">
+      <div class="logo"><img src="assets/logo.png" alt="Pizzaria Sabor do Tempero"/></div>
+      <div class="brandText">
+        <b>Pizzaria Sabor do Tempero</b>
+        <span>Meus pedidos</span>
+      </div>
+    </a>
+    <div class="headerRight">
+      <a class="iconBtn" id="waLink" target="_blank" rel="noreferrer">WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<main class="container" style="padding:22px 0 30px">
+  <section class="section">
+    <div class="sectionHd"><h2>Histórico</h2><span>Salvo no seu navegador</span></div>
+    <div class="sectionBd" id="orders"></div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footerInner">
+    <div>Rua Treze de Abril, 381 - Vila Industrial - Toledo/PR</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a href="index.html">Cardápio</a>
+      <a href="checkout.html">Checkout</a>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
